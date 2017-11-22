@@ -1,3 +1,59 @@
+/P js 笔记 P/
+js字符串截取：
+    substring：从第几位截取到第几位
+    substr：从第几位截取几位
+js 字符串查找：
+    str.indexOf('hel')
+js添加节点
+    appendChild() 为当前节点添加一个新的子节点,放在最后的子节点后
+    eg:parent.appendChild(newChild);
+    insertBefore()  为当前节点添加一个新的子节点,放在指定的子节点后
+    eg:
+    parent.insertBefore(newChild,child2);
+jQuery添加节点:
+    http://www.cnblogs.com/rentianyuan/p/4767113.html
+    第一组：before()、insertBefore()
+
+    第二组：after()、insertAfter()
+
+    第三组：prepend()、prependTo()
+
+    第四组：append()、appendTo()
+
+js创建对象：
+   (1)  var obj = new Object();
+        obj.prototype = {
+            name : 'JavaScript',
+            fun : function() {
+                //do something;
+                console.log("this in something in obj.fun");
+            }
+        }
+   (2)  var obj = {
+            name : "obj.name",
+            fun : function(){
+                console.log("this in something in obj.fun");
+            }
+        }
+
+
+检测变量是否为undefind：
+typeof(eventImg.src) == "undefined"
+
+event.target 触发js 获取事件的子元素
+让所有子元素回原，再让target改变
+
+
+
+
+ajax: (核心三步)
+1: xhr = XMLHttpRequest();
+2: xhr.open('get/post',url,true/false);
+3: xhr.send(null);
+
+
+
+
 /*jquery学习笔记*/
 
 
