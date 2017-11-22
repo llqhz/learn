@@ -1,0 +1,105 @@
+svn
+
+--- SVN ---
+需求: 不同文件整合
+      相同文件合并
+      版本更新和回退
+
+  签出          更新      =>      修改      =>      提交
+chechout       update                              commit
+
+
+安装 TortoiseSvn
+创建仓库: 代码托管的仓库: resposity
+本地checkout 签出:copy代码库的仓库 一次执行
+建文件编写然后add 加入仓库管理之中
+
+每次编写代码前先更新自己的仓库,看看有木有别人提交的代码来同步
+    update  =>  修改  => (update->)commit
+                  |
+        删除和增加后都要commit
+                  |
+    所有操作都要commit 否则无效
+
+显示日志:
+    TortoiseSvn->show log  查看谁修改了谁 追责
+    TortoiseSvn->update to revision 版本回退(文件找回)
+    TortoiseSvn->repo-browser 查看每个版本的所有文件
+
+解决冲突:
+    commit之前需要update (别人在你之前提交过,自己再看看有木有冲突)
+    update => 手动解决冲突 => TortoiseSvn->resolved => commit
+
+忽略文件夹:
+    选中文件夹 => TortoiseSvn->add_to_ignore_list->(...)
+
+linux搭建svn服务器:
+    yum install subvision
+    cd /usr/local/llqhz/svn
+    svnadmin create apple
+    svnadmin create orange
+
+    cd apple/conf
+    vim svnserve.conf
+    /authz -> authz-db = authz           # 用户管理文件名
+    /password -> password-db = passwd    # 权限管理文件名
+
+    vim passwd  => llqhz = llqhz  xg = xg
+    vim authz   => llqhz = rw     xg =r     * =
+
+    svnserve -d -r /usr/local/llqhz/svn
+
+    测试:
+         svn co svn://120.77.183.43/apple
+
+    调试:
+        netstat -na 查看端口
+        svn co svn://127.0.0.1/apple  测试本地端口
+
+        netstat -ano就看到3690
+    查看所有启动服务:
+        systemctl list-unit-files | grep enabled
+    查看所有打开的端口:
+        firewall-cmd  --zone=public --list-ports
+
+
+    ---git----:
+GUI   图形界面
+Bash  命令行
+
+步骤:
+
+1:  报家门
+    git config --global user.name  llqhz
+    git config --global user.email llqhz@qq.com
+
+2:  创建版本库
+  (本地)
+    cd D:/wamp/www/bool/newgit/git01
+    git init 创建本地库,本地个人管理个人项目
+    pull => edit => git add . => commit
+
+
+    2.1 查看：git status
+        删除：rm index.php
+
+3: 配置公钥
+    查看：  cp ~/.ssh/* ./   =>   id_rsa.pub
+    添加：  找到github->添加ssh   =>   粘贴id_rsa.pub所有内容
+
+4: (远程) pull => push
+    1: 推
+        git push https://github.com/llqhz/git.git master
+        git push llqhz master
+
+       起别名：
+        添加：git remote add llqhz https://github.com/llqhz/git.git
+        查看：git remote -v
+        删除：git remote remove llqhz
+
+
+    2：拉
+        git pull https://github.com/llqhz/git.git master
+        git pull llqhz master
+
+
