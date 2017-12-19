@@ -771,4 +771,11 @@ print_r($argv);  // print_r($argc);
 )
 
 
+<?php
+   寻找php.ini的位置 :
+    1 sudo find / | grep php.ini
+    
+   安装phpize
+    2 whereis phpize
+    
 
