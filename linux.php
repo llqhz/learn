@@ -770,7 +770,10 @@ print_r($argv);  // print_r($argc);
     [2] => world
 )
 
-
+//php  交互模式:  需要加上 <?php ?>
+    php -v 
+    
+    运行命令方式 ctrl+d (linux)     ctrl+z (windows)
 
    寻找php.ini的位置 :
     1 sudo find / | grep php.ini
