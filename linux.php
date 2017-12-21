@@ -760,7 +760,7 @@ screen -r myweb 恢复
 PHP 接受 linux命令方式运行参数
 php demo.php hello world
 
-<?php
+
 // 用 $argv 或者 $argc 接收
 print_r($argv);  // print_r($argc);
 接收到3个参数Array
@@ -771,11 +771,15 @@ print_r($argv);  // print_r($argc);
 )
 
 
-<?php
+
    寻找php.ini的位置 :
     1 sudo find / | grep php.ini
-    
+
    安装phpize
     2 whereis phpize
-    
+
+
+    libmemcached-dev
+
+    重启apache2
 
