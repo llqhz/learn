@@ -207,16 +207,29 @@ mirrors: https://files.phpmyadmin.net/phpMyAdmin/4.7.4/phpMyAdmin-4.7.4-all-lang
     nginx http scgi temporary files: "scgi_temp"
 
 
+php安装扩展:
+
+phpize 方式:
+ wget http://pecl.php.net/get/xdebug-2.4.0RC4.tgz
+
+ tar xfzv xdebug-2.4.0RC4.tgz
+ cd xdebug-2.4.0RC4/
+
+ phpize
+ find / | grep php-config
+
+ ./configure --with-php-config=/usr/bin/php-config
+ sudo make 
+ sudo make install
+
+ [php.ini]
+ sudo find / | grep php.ini        =>   /etc/php5/cli/php.ini        cli客户端模式的php.ini
+                                   =>   /etc/php5/apache2/php.ini    apache端模式的php.ini
 
 
 
 
-
-
-
-
-
-
+pecl方式  pecl install xdebug     =>   add extension.so to php.ini
 
 
 
