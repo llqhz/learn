@@ -222,11 +222,11 @@ phpize 方式:
  sudo make 
  sudo make install
 
- [php.ini]
+ [php.ini]    869行 
  sudo find / | grep php.ini        =>   /etc/php5/cli/php.ini        cli客户端模式的php.ini
                                    =>   /etc/php5/apache2/php.ini    apache端模式的php.ini
 
-
+重启apache  ubuntu:apache  sudo /etc/init.d/apache2 restart
 
 
 pecl方式  pecl install xdebug     =>   add extension.so to php.ini
