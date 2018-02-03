@@ -245,10 +245,12 @@ jquery ajax formdata
 js 三元运算符:
 ''  0  0.0 =>  fasle
 [] {} '0' =>　true                                                                      
-                                                                       
-                                                                       
 
-                                                                       
+需要注意     undefined  false  0  '' 'nothing'  []/{}/function                                                                 
+parm = parm ? parm : parmk  适合用来判断 
+parm = parm || parmk                                                                       
+parm = parm && parmk
+parm = (typeof parm == 'undefined') ? parm : parmk                                                                       
                                                                        
                                                                        
                                                                        
