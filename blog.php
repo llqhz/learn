@@ -1,6 +1,6 @@
 <?php
 
-第一讲：
+第一讲：001
 独立开发blog
 第二讲：
     需求分析：
@@ -16,7 +16,7 @@
                 常用功能向用户确认，不常用的不需要问
 第三讲：功能结构图
         （3）功能结构图（visio）
-        
+
 
 $a 未定义： isset: X    is_null: √    empty: √
 $a = null： isset: X    is_null: √    empty: √
