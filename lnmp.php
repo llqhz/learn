@@ -125,7 +125,7 @@ mirrors: http://am1.php.net/distributions/php-7.1.10.tar.gz
 
 3: make && make install
     You may want to add: /usr/local/php/lib/php to your php.ini include_path
-4: ./sbin/php-fpm 启动
+4: ./sbin/php-fpm 启动  {报错：FPM initialization failed 请执行第5步后即可}
 
 5: cp /usr/local/php/etc/php-fpm.conf.default /usr/local/php/etc/php-fpm.conf
    {vim ./etc/php-fpm.conf     -> set nu  ->125}
