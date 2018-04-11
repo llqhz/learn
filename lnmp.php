@@ -119,6 +119,7 @@ mirrors: http://am1.php.net/distributions/php-7.1.10.tar.gz
     --with-openssl \
     --enable-mbstring \
     --with-curl \
+    --with-freetype \
     --enable-fpm                        # php作为独立进程运行
 
 ./configure --prefix=/usr/local/php --with-gd --enable-gd-native-ttf --with-jpeg-dir=lib --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --enable-fpm
