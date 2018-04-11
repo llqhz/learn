@@ -95,6 +95,39 @@ nginx conf:
         }
     }
 
+    虚拟主机:(支持pathinfo+rewrite)
+    server {
+        listen       80;
+        server_name  shop.llqhz.cn;
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        #location / {
+        #    root           html/aishop/public;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    try_files $uri /index.php?$uri;
+        #}
+        #########   seccess   ################
+        location / {
+            root   html/aishop/public;
+            index  index.html index.htm;
+            try_files $uri /index.php/$uri;
+        }
+        location ~ \.php(.*)$ {
+            root           html/aishop/public;
+            fastcgi_pass   127.0.0.1:9000;
+            #fastcgi_index  index.php;  与try_files不共存
+            fastcgi_param  SCRIPT_FILENAME $DOCUMENT_ROOT$fastcgi_script_name;
+            fastcgi_param  PATH_INFO $1;
+            include        fastcgi_params;
+        }
+        ########    success    ##################
+    }
+
 
 nginx日志:
     106.120.162.109 - - [25/Aug/2017:23:30:42 +0800] "GET / HTTP/1.1" 200(状态码) 612(length) "-" "Mozilla/5.0 (Windows NT6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36"
