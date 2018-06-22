@@ -24,7 +24,7 @@
 cd /usr/local/src/nginx
 wget http://nginx.org/download/nginx-1.12.1.tar.gz
 
-4: ./configure --prefix=/usr/local/nginx
+4: ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module #支持https
 5: make && make install
 6:
 6: ./sbin/nginx
