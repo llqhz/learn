@@ -17,3 +17,12 @@ topthink/think-captcha   v1.0.7  captcha package for thinkphp5
 topthink/think-installer v1.0.12
 
 composer show -a|--all  packagename   查看包详情,包括所有版本
+
+     
+配置php版本:
+"config": {
+        "preferred-install": "dist",
+        "platform": {
+            "php": "5.4.16"
+        }
+    }
