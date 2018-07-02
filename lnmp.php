@@ -232,8 +232,14 @@ phpize 方式:
 
 pecl方式  pecl install xdebug     =>   add extension.so to php.ini
 
-
-
+自带库安装方式
+cd /usr/local/src/php/php7.2.3/ext/zli
+find / | grep php-config    => -php-config
+ cp config0.m4 config.m4
+ phpize
+./configure --with-zlib --with-php-config=/usr/local/php/bin/php-config
+make && make install
+=== >   add extension.so to php.ini
 
 
 
