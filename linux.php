@@ -786,3 +786,10 @@ print_r($argv);  // print_r($argc);
 
     重启apache2
 
+    
+    
+curl 下载文件(查看进度)
+curl http://www.1987.name/test.iso -o filename.iso --progress
+参考: https://blog.csdn.net/gubenpeiyuan/article/details/50803095
+    
+    
