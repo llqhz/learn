@@ -26,3 +26,9 @@ composer show -a|--all  packagename   查看包详情,包括所有版本
             "php": "5.4.16"
         }
     }
+     
+     
+windows 安装多版本composer
+找到composer.phar 所在目录 =>  C:\ProgramData\ComposerSetup\bin
+复制composer composer.bat
+改名为composer5 composer5.bat
