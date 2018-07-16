@@ -44,3 +44,20 @@ windows 安装多版本composer
  (6) phpqrcode 没有创建cache文件夹的权限,需要自己在src文件夹建好cache文件夹
  (7) think_captcha 只要加载成功就会正常运行
  
+ 
+ 
+ 发布自己的 composer 类库
+ (1) 创建自己的GitHub仓库,获取git链接
+ (2) git pull origin master
+ (3) composer init 并 根据 prs-4创建类库文件结构 "llqhz\\": "src"
+ (4) git add ,commit, -a tag, push origin master, push origin v1.0.0
+ (5) packagist submit, add hook
+ (6) use: composer config -g repo.packagist composer https://packagist.org (国内镜像更新不及时)
+          composer require llqhz/wechat dev-master
+ 注意点: 
+ (1) (国内镜像更新不及时) composer config -g repo.packagist composer https://packagist.org
+ (2) package 需要在github上加上tag,这样才能直接require而不用dev-master 
+ 
+ 
+ 
+ 
