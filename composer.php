@@ -58,6 +58,8 @@ windows 安装多版本composer
  (1) (国内镜像更新不及时) composer config -g repo.packagist composer https://packagist.org
  (2) package 需要在github上加上tag,这样才能直接require而不用dev-master 
  
+ 添加packagist自动更新
+  登录github/wechat =>settings => Integrations&services => add packagist user/token/domain
  
  
  
