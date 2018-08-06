@@ -2,8 +2,8 @@
 /**
  * @Author: llqhz
  * @Date:   2017-09-30 21:14:11
- * @Last Modified by:   llqhz
- * @Last Modified time: 2017-10-02 20:06:58
+ * @Last Modified by:   name
+ * @Last Modified time: 2018-07-30 19:15:40
  */
  ali os 120.77.183.43
 
@@ -26,7 +26,6 @@ wget http://nginx.org/download/nginx-1.12.1.tar.gz
 
 4: ./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module #支持https
 5: make && make install
-6:
 6: ./sbin/nginx
 
 [mysql]
@@ -220,10 +219,10 @@ phpize 方式:
  find / | grep php-config
 
  ./configure --with-php-config=/usr/bin/php-config
- sudo make 
+ sudo make
  sudo make install
 
- [php.ini]    869行 
+ [php.ini]    869行
  sudo find / | grep php.ini        =>   /etc/php5/cli/php.ini        cli客户端模式的php.ini
                                    =>   /etc/php5/apache2/php.ini    apache端模式的php.ini
 
