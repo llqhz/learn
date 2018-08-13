@@ -231,6 +231,15 @@ phpize 方式:
 
 pecl方式  pecl install xdebug     =>   add extension.so to php.ini
 
+
+
+xdebug 安装:
+(1) 在https://xdebug.org/wizard.php上粘贴phpinfo的html源码 下载推荐的xdebug并解压
+(2) phpize
+(3) ./configure --with-php-config=/usr/local/php/bin/php-config
+(4) add to ini : zend_extension = /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so
+ 
+
 自带库安装方式
 cd /usr/local/src/php/php7.2.3/ext/zli
 find / | grep php-config    => -php-config
