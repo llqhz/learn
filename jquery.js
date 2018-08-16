@@ -244,34 +244,38 @@ jquery ajax formdata
 
 js 三元运算符:
 ''  0  0.0 =>  fasle
-[] {} '0' =>　true                                                                      
+[] {} '0' =>　true
 
-需要注意     undefined  false  0  '' 'nothing'  []/{}/function                                                                 
-parm = parm ? parm : parmk  适合用来判断 
-parm = parm || parmk                                                                       
+需要注意     undefined  false  0  '' 'nothing'  []/{}/function
+parm = parm ? parm : parmk  适合用来判断
+parm = parm || parmk
 parm = parm && parmk
-parm = (typeof parm == 'undefined') ? parm : parmk                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
-                                                                       
+parm = (typeof parm == 'undefined') ? parm : parmk
+
+
+jquery 元素高度
+
+clientHeight    可见区域高度
+offsetHeight    元素的总高度
+scrollTop       元素偏移(滚动)的高度
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
