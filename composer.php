@@ -45,6 +45,8 @@ windows 安装多版本composer
  (7) think_captcha 只要加载成功就会正常运行
  
  
+ # phpqrcode 没有采用prs-0/4 , 安装需要 指定版本: dev-master
+ 
  
  发布自己的 composer 类库
  (1) 创建自己的GitHub仓库,获取git链接
