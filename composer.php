@@ -47,6 +47,25 @@ windows 安装多版本composer
  
  # phpqrcode 没有采用prs-0/4 , 安装需要 指定版本: dev-master
  
+ # 四种类库自动加载方式:
+ "files": [
+      // files 会引入当前文件
+      "vendor/phpqrcode/phpqrcode/qrlib.php"
+  ],
+ "classmap": [
+      // classmap会查找当前目录所有文件的所有class
+      // "vendor/phpqrcode/phpqrcode"
+  ],
+ "psr-0": {
+      // 指定当前命名空间的父级目录 是psr-4的父级目录 
+      "app\\": ""  // 即在 ./ 当前目录下搜寻 app这个命名空间及其下面的类
+  }
+ 
+ "psr-4": {
+      // psr-4 会指定命名空间 所对应的目录
+      "app\\": "application"
+  },
+
  
  发布自己的 composer 类库
  (1) 创建自己的GitHub仓库,获取git链接
