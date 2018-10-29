@@ -2,7 +2,7 @@
 ajax: (*核心三步*)
 1: xhr = new XMLHttpRequest();
 2: xhr.open('get',url,true);
-3: xhr.send(null);
+3: xhr.send(null) ;
 
 
 ajax: post
