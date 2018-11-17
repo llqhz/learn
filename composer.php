@@ -40,11 +40,32 @@ windows 安装多版本composer
      当框架可以正常解析模块控制器方法时,path_info就已经配置成功了
  (3) 注意需要更改和编写的文件 , 不可以编写这个而实际上运行的是另一个文件
  (4) phpqrcode内类库需要自己vendor('path/to/qrlib','.php') 起始目录为'vendor/'
- (5) composer.json中 autoload => { 'classmap'=> [],'files'=>[] } 的起始目录为 'ROOT_PATH',需要自己加vendor => eg: 'vendor/phpqrcode/phpqrcode';
+ (5) composer.json中 autoload => { 'classmap'=> [],'files'=>[] } 的起始目录为 当前composer.json所在的目录,需要自己加vendor => eg: 'vendor/phpqrcode/phpqrcode';
  (6) phpqrcode 没有创建cache文件夹的权限,需要自己在src文件夹建好cache文件夹
  (7) think_captcha 只要加载成功就会正常运行
  
  
+ # phpqrcode 没有采用prs-0/4 , 安装需要 指定版本: dev-master
+ 
+ # 四种类库自动加载方式:
+ "files": [
+      // files 会引入当前文件
+      "vendor/phpqrcode/phpqrcode/qrlib.php"
+  ],
+ "classmap": [
+      // classmap会查找当前目录所有文件的所有class
+      // "vendor/phpqrcode/phpqrcode"
+  ],
+ "psr-0": {
+      // 指定当前命名空间的父级目录 是psr-4的父级目录 
+      "app\\": ""  // 即在 ./ 当前目录下搜寻 app这个命名空间及其下面的类
+  }
+ 
+ "psr-4": {
+      // psr-4 会指定命名空间 所对应的目录
+      "app\\": "application"
+  },
+
  
  发布自己的 composer 类库
  (1) 创建自己的GitHub仓库,获取git链接
