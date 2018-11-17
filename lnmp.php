@@ -3,7 +3,7 @@
  * @Author: llqhz
  * @Date:   2017-09-30 21:14:11
  * @Last Modified by:   name
- * @Last Modified time: 2018-07-30 19:15:40
+ * @Last Modified time: 2018-08-16 11:18:13
  */
  ali os 120.77.183.43
 
@@ -238,7 +238,7 @@ xdebug 安装:
 (2) phpize
 (3) ./configure --with-php-config=/usr/local/php/bin/php-config
 (4) add to ini : zend_extension = /usr/local/php/lib/php/extensions/no-debug-non-zts-20170718/xdebug.so
- 
+
 
 自带库安装方式
 cd /usr/local/src/php/php7.2.3/ext/zli
