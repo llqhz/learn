@@ -44,6 +44,7 @@ reference:  http://www.cnblogs.com/gaojupeng/p/5727069.html
 5: ./bin/mysqld --user=mysql --basedir=/usr/local/mysql --datadir=/usr/local/mysql/data --initialize
    note:
    A temporary password is generated for root@localhost: Ze-s3tfzDlk%
+   # A temporary password is generated for root@localhost: Dl8WRvW4Qe*9
 6: vim /etc/my.cnf
     [mysqld]
     basedir=/usr/local/mysql
@@ -80,11 +81,18 @@ reference:  http://www.cnblogs.com/gaojupeng/p/5727069.html
 10: 软连接: ln -s /usr/local/mysql/bin/mysql /usr/bin
     mysql -u root -p
     SET PASSWORD = PASSWORD('llqhz');  flush privileges;
+    // 新版： alter user 'root'@'localhost' identified with mysql_native_password by 'llqhz';
  tips: 查看mysqld socket
             ps -aux | grep mysql
 11: 授权:
     grant all privileges on *.* to llqhz@'%' identified by 'llqhz' with grant option;
     flush privileges;
+
+    # 8.0 版本mysql采用以下方法
+    create user llqhz@"%" identified by "llqhz"; 
+    grant all privileges on *.* to "llqhz"@"%" with grant option; 
+    flush privileges;
+
 12: 设置编码
     show variables like 'character%';
     SET character_set_database = utf8;
@@ -122,6 +130,9 @@ mirrors: http://am1.php.net/distributions/php-7.1.10.tar.gz
     --enable-fpm                        # php作为独立进程运行
 
 ./configure --prefix=/usr/local/php --with-gd --enable-gd-native-ttf --with-jpeg-dir=lib --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
+
+# php7.4
+./configure --prefix=/usr/local/php --enable-gd --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
 
 3: make && make install
     You may want to add: /usr/local/php/lib/php to your php.ini include_path
