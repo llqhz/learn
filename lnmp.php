@@ -259,8 +259,7 @@ find / | grep php-config    => -php-config
 ./configure --with-zlib --with-php-config=/usr/local/php/bin/php-config
 make && make install
 === >   add extension.so to php.ini  # php -d foo=bar
-
-
+# php -d extension=swoole.so
 
 
 
