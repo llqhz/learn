@@ -260,7 +260,7 @@ find / | grep php-config    => -php-config
 make && make install
 === >   add extension.so to php.ini  # php -d foo=bar
 # php -d extension=swoole.so 基本不起作用（理论上应该是用于动态执行的时候新加载）
-
+# 测试merge request
 
 
 
