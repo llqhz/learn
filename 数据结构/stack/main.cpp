@@ -1,6 +1,7 @@
 #include <iostream>
 #include "stdlib.h"
 #include "SplStack.h"
+#include "cases/BaseClass.h"
 
 using namespace std;
 
@@ -44,6 +45,21 @@ int main()
 
     delete p;
     p = nullptr;
+
+    // 测试其他类
+    SplStack<BaseClass> *np = new SplStack<BaseClass>(5);
+
+    cout << "isEmpty:" << np->isEmpty() << endl;
+
+    BaseClass *b = new BaseClass(1, 3);
+    np->push(*b);
+
+    np->traverse();
+
+    cout << "length:" << np->length() << endl;
+    
+    delete np;
+    np = nullptr;
     cout << "success" << endl;
     return 0;
 
