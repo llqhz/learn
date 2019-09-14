@@ -4,7 +4,7 @@
 #include <iostream>
 using namespace std;
 
-template <class T>
+template <typename T>
 class SplStack
 {
     protected:
@@ -24,7 +24,7 @@ class SplStack
         void traverse();
 };
 
-template <class T>
+template <typename T>
 SplStack<T>::SplStack(int capacity)
 {
     this->capacity = capacity;
@@ -32,38 +32,38 @@ SplStack<T>::SplStack(int capacity)
     this->iTop = 0;
 }
 
-template <class T>
+template <typename T>
 SplStack<T>::~SplStack()
 {
     delete []this->pStack;
     this->pStack = nullptr;
 }
 
-template <class T>
+template <typename T>
 bool SplStack<T>::isEmpty()
 {
     return this->iTop == 0 ? true : false;
 }
 
-template <class T>
+template <typename T>
 bool SplStack<T>::isFull()
 {
     return this->iTop == this->capacity ? true : false;
 }
 
-template <class T>
+template <typename T>
 void SplStack<T>::clear()
 {
     this->iTop = 0;
 }
 
-template <class T>
+template <typename T>
 int SplStack<T>::length()
 {
     return this->iTop;
 }
 
-template <class T>
+template <typename T>
 bool SplStack<T>::push(T elem)
 {
     if (this->isFull())
@@ -75,7 +75,7 @@ bool SplStack<T>::push(T elem)
     return true;
 }
 
-template <class T>
+template <typename T>
 bool SplStack<T>::pop(T &elem)
 {
     if (this->isEmpty())
@@ -87,7 +87,7 @@ bool SplStack<T>::pop(T &elem)
     return true;
 }
 
-template <class T>
+template <typename T>
 void SplStack<T>::traverse()
 {
     for (int i = 0; i < this->iTop; i++)
