@@ -19,7 +19,7 @@ int main()
     cout << "length:"  << p->length() << endl;
     p->traverse();
 
-    p->remove(1);
+    p->remove(1, new BaseClass(2,9));
     p->traverse();
 
     cout << "success" << endl;

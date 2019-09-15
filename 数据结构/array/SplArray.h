@@ -66,7 +66,7 @@ class SplArray
         /**
          * 删除元素 
          */
-        bool remove(int position);
+        bool remove(int position, T *elem);
 
         /**
          * 遍历顺序线性表
@@ -185,8 +185,9 @@ bool SplArray<T>::insert(int position, T *elem)
  * 删除元素 
  */
 template <typename T>
-bool SplArray<T>::remove(int position)
+bool SplArray<T>::remove(int position, T *elem)
 {
+    *elem = this->pArray[position];
     if (position < 0 || position >= this->len) {
         return false;
     }
