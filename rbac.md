@@ -13,3 +13,4 @@ app_log ( id, name, urls, details, times )
 
 > 当用户点击urls , 找到用户id => 从user_rule表找到用户的所有角色 => 从role_access表中找到每个角色的所有权限
 判断每个权限是否match urls若有,则有权限
+
