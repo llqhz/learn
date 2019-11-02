@@ -45,6 +45,7 @@ reference:  http://www.cnblogs.com/gaojupeng/p/5727069.html
    note:
    A temporary password is generated for root@localhost: Ze-s3tfzDlk%
    # A temporary password is generated for root@localhost: Dl8WRvW4Qe*9
+   # A temporary password is generated for root@localhost: 9jZkahuocE<q
 6: vim /etc/my.cnf
     [mysqld]
     basedir=/usr/local/mysql
@@ -132,7 +133,7 @@ mirrors: http://am1.php.net/distributions/php-7.1.10.tar.gz
 ./configure --prefix=/usr/local/php --with-gd --enable-gd-native-ttf --with-jpeg-dir=lib --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
 
 # php7.4
-./configure --prefix=/usr/local/php --enable-gd --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
+./configure --prefix=/usr/local/php --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-zlib --enable-ftp --enable-pcntl --enable-soap --enable-sockets --enable-zip --enable-fpm
 
 3: make && make install
     You may want to add: /usr/local/php/lib/php to your php.ini include_path
@@ -257,6 +258,7 @@ find / | grep php-config    => -php-config
  cp config0.m4 config.m4
  phpize
 ./configure --with-zlib --with-php-config=/usr/local/php/bin/php-config
+./configure --enable-zip --with-php-config=/usr/local/php/bin/php-config
 make && make install
 === >   add extension.so to php.ini  # php -d foo=bar
 # php -d extension=swoole.so 基本不起作用（理论上应该是用于动态执行的时候新加载）
