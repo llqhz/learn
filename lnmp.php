@@ -129,10 +129,10 @@ mirrors: http://am1.php.net/distributions/php-7.1.10.tar.gz
     --with-freetype \
     --enable-fpm                        # php作为独立进程运行
 
-./configure --prefix=/usr/local/php --with-gd --enable-gd-native-ttf --with-jpeg-dir=lib --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
+./configure --prefix=/usr/local/php --with-gd --enable-gd-native-ttf --with-jpeg-dir=lib --with-zlib --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
 
 # php7.4
-./configure --prefix=/usr/local/php --enable-gd --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --enable-mbstring --with-curl --with-freetype --enable-fpm
+./configure --prefix=/usr/local/php --enable-gd --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-openssl --with-zlib --enable-mbstring --with-curl --with-freetype --enable-fpm
 
 3: make && make install
     You may want to add: /usr/local/php/lib/php to your php.ini include_path
@@ -252,7 +252,7 @@ xdebug 安装:
 
 
 自带库安装方式
-cd /usr/local/src/php/php7.2.3/ext/zli
+cd /usr/local/src/php/php7.2.3/ext/zlib
 find / | grep php-config    => -php-config
  cp config0.m4 config.m4
  phpize
